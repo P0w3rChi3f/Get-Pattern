@@ -6,19 +6,14 @@ Based on the output from the Ruby script, I will need a triple loop. Most inner 
 #>
 $maxLoops = 3
 $iterator = 0
-
+$pattern = $null
 
 foreach ($cap in ('A'..'Z')) {
     $iterator += 1
     foreach ($lower in ('a'..'z')) {
         foreach ($num in (0..9)) {
-            $pattern = $pattern + $cap+$lower+$num
-            if ($iterator -ge $maxLoops) {
-                break
-            }
-            else {
-                write-host $iterator
-            }
+            $pattern = $pattern + $cap + $lower + $num
+
         }# Close inner Foreach
     } # Close middle Foreach
 } # Close Outer Foreach
